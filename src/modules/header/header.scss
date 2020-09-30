@@ -15,15 +15,17 @@
   }
 
   &__nav {
-    display: flex;
+    display: none;
     align-items: center;
   }
-  &__menu{
+
+  &__menu {
     display: none;
     background: none;
     border: none;
     cursor: pointer;
   }
+
   &__filter {
     cursor: pointer;
     outline: none;
@@ -38,6 +40,7 @@
     border-radius: 6px;
     border: solid 2px #62aa14;
   }
+
   &__filter-mobile {
     cursor: pointer;
     display: none;
@@ -52,6 +55,7 @@
     border-radius: 6px;
     border: solid 2px #62aa14;
   }
+
   &__filter-active {
     cursor: pointer;
     border: none;
@@ -66,7 +70,7 @@
     background: none;
   }
 
-  .active{
+  .active {
     text-decoration: revert;
   }
 
