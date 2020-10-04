@@ -4,14 +4,14 @@ import { RootPage } from '../modules/rootPage';
 import { AchievementsPage } from '../modules/achievements-page';
 import { Info } from '../modules/info';
 
-export const Routes = ({isAuthorized, routes}) => {
+export const Routes = ({isAuthorized, routes,newRoutes}) => {
     if (isAuthorized) {
         return (
             <Switch>
                 {
-                    routes &&
+                    (routes || newRoutes) &&
                     <Route path="/jobs" exact>
-                        <AchievementsPage routes={routes}/>
+                        <AchievementsPage routes={routes} newRoutes={newRoutes}/>
                     </Route>
                 }
 

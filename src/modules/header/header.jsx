@@ -6,14 +6,18 @@ import filter from '../../assets/filter-active.svg';
 import { NavLink, useHistory } from "react-router-dom";
 import filterActive from '../../assets/filter.png';
 
-export const Header = ({isAuthorized}) => {
+export const Header = ({isAuthorized, setFirstValue, setSecondValue}) => {
     let history = useHistory();
     const [state, setHandler] = useState(false);
     const filterHandler = () => history.location.pathname !== '/jobs' ? setHandler(false) : setHandler(!state);
+
+    const firstInputHandler = event => event.currentTarget.value.length === 10 || event.currentTarget.value.length === 0 ? setFirstValue(event.currentTarget.value) : null;
+    const secondInputHandler = event => event.currentTarget.value.length === 10 || event.currentTarget.value.length === 0 ? setSecondValue(event.currentTarget.value) : null;
+
     return (
         <header>
             <div className="header">
-                <NavLink to="/"><img className="header__logo" src={logo}/></NavLink>
+                <NavLink to="/jobs"><img className="header__logo" src={logo}/></NavLink>
                 {isAuthorized &&
                 <div>
                     <nav className="header__nav">
@@ -41,17 +45,16 @@ export const Header = ({isAuthorized}) => {
                     <div className="filter-menu__text">
                         Date from
                     </div>
-                    <input className="filter-menu__input" type="datetime-local"/>
+                    <input type="text" onChange={firstInputHandler} className="filter-menu__input"/>
                 </div>
                 <div className="filter-menu__right">
                     <div className="filter-menu__text">
                         Date to
                     </div>
-                    <input className="filter-menu__input" type="datetime-local"/>
+                    <input type="text" onChange={secondInputHandler} className="filter-menu__input"/>
                 </div>
             </div>
             }
         </header>
-
     )
 };
