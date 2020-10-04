@@ -6,6 +6,14 @@
   padding: 0 37px 0 39px;
   align-items: center;
 
+  &__filter-menu {
+    background-color: #eaeaea;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__logo, &__nav {
     height: 56px;
   }
@@ -15,7 +23,7 @@
   }
 
   &__nav {
-    display: none;
+    display: flex;
     align-items: center;
   }
 
@@ -59,7 +67,7 @@
   &__filter-active {
     cursor: pointer;
     border: none;
-    display: none;
+    display: flex;
     outline: none;
     margin-left: 49px;
     width: 39px;
@@ -99,5 +107,42 @@
       width: 96px !important;
       padding-right: 0 !important;
     }
+  }
+}
+
+.filter-menu {
+  &__right, &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__right {
+    margin-left: 23px;
+  }
+
+  &__left {
+    margin-right: 23px;
+  }
+
+  &__input {
+    width: 100px;
+    height: 31px;
+    border-radius: 11px;
+    margin-left: 15px;
+    outline: none;
+    cursor: pointer;
+    border: solid 1px #979797;
+  }
+
+  &__text {
+    height: 15px;
+    font-family: SFUIText, serif;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
   }
 }
