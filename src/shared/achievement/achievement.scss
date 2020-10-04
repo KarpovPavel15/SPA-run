@@ -1,0 +1,16 @@
+.achievement{
+  width: 330px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 75px;
+  &:first-child{
+    margin-top: 50px;
+  }
+  &:last-child{
+    margin-bottom: 0!important;
+  }
+  &__info{
+    width: 120px;
+  }
+}

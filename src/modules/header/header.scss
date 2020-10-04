@@ -1,0 +1,148 @@
+.header {
+  background-color: #7ed321;
+  height: 116px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 37px 0 39px;
+  align-items: center;
+
+  &__filter-menu {
+    background-color: #eaeaea;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo, &__nav {
+    height: 56px;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__filter {
+    cursor: pointer;
+    outline: none;
+    margin-left: 49px;
+    width: 39px;
+    height: 39px;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border-radius: 6px;
+    border: solid 2px #62aa14;
+  }
+
+  &__filter-mobile {
+    cursor: pointer;
+    display: none;
+    outline: none;
+    margin-left: 49px;
+    width: 39px;
+    height: 39px;
+    object-fit: contain;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border-radius: 6px;
+    border: solid 2px #62aa14;
+  }
+
+  &__filter-active {
+    cursor: pointer;
+    border: none;
+    display: flex;
+    outline: none;
+    margin-left: 49px;
+    width: 39px;
+    height: 39px;
+    object-fit: contain;
+    align-items: center;
+    justify-content: center;
+    background: none;
+  }
+
+  .active {
+    text-decoration: revert;
+  }
+
+  &__nav-links {
+    cursor: pointer;
+    text-decoration: blink;
+    width: 35px;
+    padding-right: 46px;
+    height: 16px;
+    font-family: SFUIText, serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: white;
+    list-style-type: none;
+
+    &:first-child {
+      width: 40px !important;
+    }
+
+    &:last-child {
+      width: 96px !important;
+      padding-right: 0 !important;
+    }
+  }
+}
+
+.filter-menu {
+  &__right, &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__right {
+    margin-left: 23px;
+  }
+
+  &__left {
+    margin-right: 23px;
+  }
+
+  &__input {
+    width: 100px;
+    height: 31px;
+    border-radius: 11px;
+    margin-left: 15px;
+    outline: none;
+    cursor: pointer;
+    border: solid 1px #979797;
+  }
+
+  &__text {
+    height: 15px;
+    font-family: SFUIText, serif;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+  }
+}
