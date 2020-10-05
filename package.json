@@ -24,11 +24,11 @@
   },
   "scripts": {
     "startFront": "react-scripts start",
-    "start": "node server.js",
+    "server": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "concurrently \"npm run start\" \"npm run startFront\""
+    "start": "concurrently \"npm run server\" \"npm run startFront\""
   },
   "eslintConfig": {
     "extends": "react-app"
