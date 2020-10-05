@@ -33,3 +33,12 @@
     justify-content: center;
   }
 }
+
+@media screen and (max-device-width: 600px) {
+  .info{
+    &__paragraph,&__data{
+      width: 100% ;
+    }
+  }
+}
+

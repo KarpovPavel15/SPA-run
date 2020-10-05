@@ -1,6 +1,8 @@
 import './header.scss';
 import React, { useState } from 'react';
 import logo from '../../assets/logo.svg';
+import logoMobile from '../../assets/logo.png';
+import greenlogoMobile from '../../assets/greenlogo.png';
 import menu from '../../assets/menu.png';
 import filter from '../../assets/filter-active.svg';
 import { NavLink, useHistory } from "react-router-dom";
@@ -9,17 +11,21 @@ import filterActive from '../../assets/filter.png';
 export const Header = ({isAuthorized, setFirstValue, setSecondValue}) => {
     let history = useHistory();
     const [state, setHandler] = useState(false);
+    const [open, setOpen] = useState(false);
     const filterHandler = () => history.location.pathname !== '/jobs' ? setHandler(false) : setHandler(!state);
 
     const firstInputHandler = event => event.currentTarget.value.length === 10 || event.currentTarget.value.length === 0 ? setFirstValue(event.currentTarget.value) : null;
     const secondInputHandler = event => event.currentTarget.value.length === 10 || event.currentTarget.value.length === 0 ? setSecondValue(event.currentTarget.value) : null;
 
+    const handleClick = () => setOpen(!open);
+
     return (
         <header>
             <div className="header">
-                <NavLink to="/jobs"><img className="header__logo" src={logo}/></NavLink>
+                <NavLink className="header__logo" to="/jobs"><img className="header__logo" src={logo}/></NavLink>
+                <NavLink to="/jobs"><img className="header__logo-mobile" src={logoMobile}/></NavLink>
                 {isAuthorized &&
-                <div>
+                <div className="header__options">
                     <nav className="header__nav">
                         <div className="header__list">
                             <NavLink to="/jobs" className="header__nav-links" activeClassName="active">JOBS</NavLink>
@@ -36,9 +42,32 @@ export const Header = ({isAuthorized, setFirstValue, setSecondValue}) => {
                     </nav>
                 </div>
                 }
-                <button className="header__filter-mobile"><img src={filter}/></button>
-                <button className="header__menu"><img src={menu}/></button>
+                {
+                    state === false
+                        ? <button className="header__filter-mobile" onClick={filterHandler}><img src={filter}/></button>
+                        : <button className="header__filter-active-mobile" onClick={filterHandler}><img
+                            src={filterActive}/>
+                        </button>
+                }
+
+                <button className="header__menu" onClick={handleClick}><img src={menu}/></button>
+                {open && <div className="header__hamburger hamburger">
+                    <div className="cl-btn-2" onClick={handleClick}>
+                        <img className="hamburger__logo-mobile" src={greenlogoMobile}/>
+                        <div>
+                            <div className="leftright"/>
+                            <div className="rightleft"/>
+                            <span className="close-btn">закрыть</span>
+                        </div>
+                    </div>
+
+                    <NavLink onClick={handleClick} to="/jobs" className="hamburger__nav-links" activeClassName="active">JOBS</NavLink>
+                    <NavLink onClick={handleClick} to="/info" className="hamburger__nav-links" activeClassName="active">INFO</NavLink>
+                    <NavLink onClick={handleClick} to="/contact" className="hamburger__nav-links" activeClassName="active">CONTACT
+                        US</NavLink>
+                </div>}
             </div>
+
             {state &&
             <div className="header__filter-menu filter-menu">
                 <div className="filter-menu__left">

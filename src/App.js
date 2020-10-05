@@ -12,7 +12,6 @@ function App() {
                 <Page/>
             </BrowserRouter>
         </Provider>
-
     );
 }
 
