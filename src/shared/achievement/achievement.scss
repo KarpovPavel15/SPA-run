@@ -14,3 +14,13 @@
     width: 120px;
   }
 }
+
+@media screen and (max-device-width: 600px){
+.achievement{
+  border-bottom: 2px solid grey;
+  margin-bottom: auto!important;
+  &:first-child{
+    margin-top: auto !important;
+  }
+}
+}

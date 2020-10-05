@@ -6,6 +6,12 @@
   padding: 0 37px 0 39px;
   align-items: center;
 
+  &__logo-mobile{
+    display: none;
+    height: 37px;
+    width: 98px;
+  }
+
   &__filter-menu {
     background-color: #eaeaea;
     display: flex;
@@ -68,6 +74,19 @@
     cursor: pointer;
     border: none;
     display: flex;
+    outline: none;
+    margin-left: 49px;
+    width: 39px;
+    height: 39px;
+    object-fit: contain;
+    align-items: center;
+    justify-content: center;
+    background: none;
+  }
+  &__filter-active-mobile {
+    cursor: pointer;
+    border: none;
+    display: none;
     outline: none;
     margin-left: 49px;
     width: 39px;
@@ -144,5 +163,64 @@
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
+  }
+}
+
+@media screen and (max-device-width: 600px) {
+  .header{
+    height: 77px!important;
+    padding: 0 25px 0 25px !important;
+    &__logo-mobile{
+      display: flex !important;
+    }
+    &__logo{
+      display: none!important;
+    }
+    &__filter-active-mobile{
+      display: flex!important;
+    }
+    &__menu{
+      display: flex!important;
+      cursor: pointer;
+      outline: none ;
+    }
+    &__options{
+      display: none!important;
+    }
+    &__filter-mobile{
+      display: flex;
+    }
+  }
+  .filter-menu {
+
+    &__right {
+      margin-left: 17px;
+    }
+
+    &__left {
+      margin-right: 17px;
+    }
+
+    &__input {
+      width: 72px;
+      height: 31px;
+      border-radius: 11px;
+      margin-left: 15px;
+      outline: none;
+      cursor: pointer;
+      border: solid 1px #979797;
+    }
+
+    &__text {
+      height: 15px;
+      font-family: SFUIText, serif;
+      font-size: 13px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+    }
   }
 }

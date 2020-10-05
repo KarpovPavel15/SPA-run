@@ -1,8 +1,9 @@
 import { Header } from '../header';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Routes } from '../../routes';
 import { AuthContext } from '../../context';
 import { useAuth } from '../../hooks/useAuth';
+import './page.scss'
 
 export const Page = () => {
     const {token, login, logout, getRoutes, routes} = useAuth();
@@ -48,7 +49,6 @@ export const Page = () => {
                 <Header isAuthorized={isAuthorized} setFirstValue={setFirstValue} setSecondValue={setSecondValue}/>
                 <Routes isAuthorized={isAuthorized} routes={routes} newRoutes={newRoutes}/>
                 <footer>
-                    Footer
                 </footer>
             </AuthContext.Provider>
         </div>

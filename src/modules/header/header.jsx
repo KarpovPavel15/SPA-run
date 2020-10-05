@@ -1,6 +1,7 @@
 import './header.scss';
 import React, { useState } from 'react';
 import logo from '../../assets/logo.svg';
+import logoMobile from '../../assets/logo.png';
 import menu from '../../assets/menu.png';
 import filter from '../../assets/filter-active.svg';
 import { NavLink, useHistory } from "react-router-dom";
@@ -17,9 +18,10 @@ export const Header = ({isAuthorized, setFirstValue, setSecondValue}) => {
     return (
         <header>
             <div className="header">
-                <NavLink to="/jobs"><img className="header__logo" src={logo}/></NavLink>
+                <NavLink className="header__logo" to="/jobs"><img className="header__logo" src={logo}/></NavLink>
+                <NavLink to="/jobs"><img className="header__logo-mobile" src={logoMobile}/></NavLink>
                 {isAuthorized &&
-                <div>
+                <div className="header__options">
                     <nav className="header__nav">
                         <div className="header__list">
                             <NavLink to="/jobs" className="header__nav-links" activeClassName="active">JOBS</NavLink>
@@ -36,7 +38,13 @@ export const Header = ({isAuthorized, setFirstValue, setSecondValue}) => {
                     </nav>
                 </div>
                 }
-                <button className="header__filter-mobile"><img src={filter}/></button>
+                {
+                    state === false
+                        ? <button className="header__filter-mobile" onClick={filterHandler}><img src={filter}/></button>
+                        : <button className="header__filter-active-mobile" onClick={filterHandler}><img src={filterActive}/>
+                        </button>
+                }
+
                 <button className="header__menu"><img src={menu}/></button>
             </div>
             {state &&
