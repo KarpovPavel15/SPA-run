@@ -24,7 +24,7 @@
   },
   "scripts": {
     "startFront": "react-scripts start",
-    "server": "node server.js",
+    "server": "nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -33,6 +33,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "http://localhost:5000/api/auth/login",
   "browserslist": {
     "production": [
       ">0.2%",

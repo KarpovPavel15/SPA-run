@@ -6,7 +6,7 @@
   padding: 0 37px 0 39px;
   align-items: center;
 
-  &__logo-mobile{
+  &__logo-mobile {
     display: none;
     height: 37px;
     width: 98px;
@@ -83,6 +83,7 @@
     justify-content: center;
     background: none;
   }
+
   &__filter-active-mobile {
     cursor: pointer;
     border: none;
@@ -127,6 +128,19 @@
       padding-right: 0 !important;
     }
   }
+
+  &__hamburger {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    top: 0;
+    height: 100%;
+    left: 0;
+    background: white;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 }
 
 .filter-menu {
@@ -166,28 +180,96 @@
   }
 }
 
+.cl-btn-2 {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+
+  div {
+    cursor: pointer;
+    position: relative;
+    height: 68px;
+    width: 50px;
+  }
+
+  .leftright {
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: #337AB7;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
+  }
+
+  .rightleft {
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: #337AB7;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all .3s ease-in;
+  }
+
+  .close-btn {
+    margin: 54px 0 0 -5px;
+    position: absolute;
+    color: #337AB7;
+    font-family: Tahoma, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .3s ease-in;
+    opacity: 0;
+  }
+
+  div:hover .leftright {
+    transform: rotate(-45deg);
+    background-color: #000;
+  }
+
+  div:hover .rightleft {
+    transform: rotate(45deg);
+    background-color: #000;
+  }
+
+  div:hover .close-btn {
+    opacity: 1;
+  }
+}
+
+
 @media screen and (max-device-width: 600px) {
-  .header{
-    height: 77px!important;
+  .header {
+    height: 77px !important;
     padding: 0 25px 0 25px !important;
-    &__logo-mobile{
+
+    &__logo-mobile {
       display: flex !important;
     }
-    &__logo{
-      display: none!important;
+
+    &__logo {
+      display: none !important;
     }
-    &__filter-active-mobile{
-      display: flex!important;
+
+    &__filter-active-mobile {
+      display: flex !important;
     }
-    &__menu{
-      display: flex!important;
+
+    &__menu {
+      display: flex !important;
       cursor: pointer;
-      outline: none ;
+      outline: none;
     }
-    &__options{
-      display: none!important;
+
+    &__options {
+      display: none !important;
     }
-    &__filter-mobile{
+
+    &__filter-mobile {
       display: flex;
     }
   }
